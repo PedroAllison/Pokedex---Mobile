@@ -1,13 +1,17 @@
 {
   "expo": {
-    "name": "pokedex",
-    "slug": "pokedex",
+    "name": "Pokédex",
+    "slug": "pokedex-camera",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "dark",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "A Pokédex precisa da câmera para identificar Pokémon."
+      },
+      "bundleIdentifier": "br.com.phd.pokedex"
     },
     "android": {
       "adaptiveIcon": {
@@ -16,10 +20,23 @@
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "CAMERA"
+      ],
+      "package": "br.com.phd.pokedex"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "A Pokédex precisa da câmera para identificar Pokémon."
+        }
+      ],
+      "expo-secure-store"
+    ]
   }
 }
